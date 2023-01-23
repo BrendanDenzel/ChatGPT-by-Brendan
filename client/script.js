@@ -18,9 +18,6 @@ function loader(element) {
   }, 300)
 }
 
-const textarea = document.querySelector("textarea[name='prompt']");
-const submitButton = document.querySelector("button[type='submit']");
-
 
 textarea.addEventListener("input", function () {
   textarea.style.height = "auto";
