@@ -41,7 +41,7 @@ body {
 
 /* hides scrollbar */
 #chat_container::-webkit-scrollbar {
-  display: none;
+  display: flex;
 }
 
 .wrapper {
@@ -127,8 +127,17 @@ form {
 textarea {
   width: 100%;
 
+  overflow: visible;
+  height: auto;
+
+  max-height: 280px;
+
+  display: flex;
+
   color: #fff;
   font-size: 18px;
+
+  resize: none;
 
   padding: 10px;
   background: transparent;
