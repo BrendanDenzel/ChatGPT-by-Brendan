@@ -1,6 +1,10 @@
 import bot from './assets/bot.svg';
 import user from './assets/user.svg';
 
+const passwordInput = document.querySelector("input[name='password']");
+const submitButton = document.querySelector("button[type='submit']");
+const chat_container = document.querySelector("#chat_container");
+
 const form = document.querySelector('form');
 const chatContainer = document.querySelector('#chat_container');
 
@@ -20,10 +24,7 @@ function loader(element) {
 
 
 textarea.addEventListener("input", function () {
-  textarea.style.height = "auto";
-    textarea.style.height = textarea.scrollHeight + "px";
-    chat_container.style.height = textarea.scrollHeight + "px";
-    chat_container.style.height = textarea.scrollHeight + "px";
+  textarea.style.height = textarea.scrollHeight + "px";
 });
 
 
@@ -105,11 +106,12 @@ const handleSubmit = async (e) => {
     const data = await response.json();
     const parsedData = data.bot.trim();
 
-    typeText(messageDiv, parsedData);
+    typeText(messageDiv, parsedData)
+    
   } else {
     const err = await response.text();
 
-    messageDiv.innerHTML = "Something went wrong";
+    messageDiv.innerHTML = "Im sorry it looks like something went wrong. Please try again later or ask Brendan.";
 
     alert(err);
   }
